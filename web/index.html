@@ -30,9 +30,12 @@
 
   .layout { display: flex; gap: 32px; align-items: flex-start; }
   .sidebar {
-    flex: 0 0 240px;
+    flex: 0 0 260px;
     position: sticky;
-    top: 24px;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 24px 4px 24px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,14 +61,17 @@
   }
   .search:focus-visible { outline: none; border-color: var(--color-accent); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .sidebar .chips { flex-direction: column; align-items: flex-start; }
-  .sidebar .chip { width: 100%; text-align: left; }
 
   @media (max-width: 768px) {
     .layout { flex-direction: column; }
-    .sidebar { position: static; flex-basis: auto; width: 100%; }
-    .sidebar .chips { flex-direction: row; }
-    .sidebar .chip { width: auto; text-align: center; }
+    .sidebar {
+      position: static;
+      flex-basis: auto;
+      width: 100%;
+      max-height: none;
+      overflow-y: visible;
+      padding: 0;
+    }
   }
   .chip {
     padding: 4px 12px;
@@ -354,7 +360,7 @@ document.getElementById("search").addEventListener("input", e => {
   render();
 });
 
-fetch("./items.json")
+fetch("./items.json", { cache: "no-cache" })
   .then(r => r.json())
   .then(data => { items = data; render(); })
   .catch(() => {
