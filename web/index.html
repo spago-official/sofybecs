@@ -112,6 +112,13 @@
     color: var(--color-accent);
   }
   .stars { color: var(--color-star); letter-spacing: 1px; }
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-sub);
+  }
   .card-title { font-weight: 600; font-size: 14px; margin: 6px 0 0; }
   .card-body { font-size: 14px; margin: 4px 0 0; white-space: pre-wrap; }
   .card-link { font-size: 12px; color: var(--color-accent); text-decoration: none; }
@@ -147,6 +154,10 @@
         <div class="chips" id="rating-chips" role="group" aria-label="評価で絞り込み"></div>
       </div>
       <div class="filter-group">
+        <span class="filter-label">機能</span>
+        <div class="chips" id="feature-chips" role="group" aria-label="機能で絞り込み"></div>
+      </div>
+      <div class="filter-group">
         <span class="filter-label">バージョン</span>
         <div class="chips" id="version-chips" role="group" aria-label="バージョンで絞り込み"></div>
       </div>
@@ -164,9 +175,12 @@ const SOURCE_LABEL = { app_store: "App Store", google_play: "Google Play", x: "X
 const PAGE_SIZE = 200;
 
 let items = [];
+const FEATURES = ["HOME", "記録", "チャット", "カレンダー", "レポート", "コンテンツ", "設定", "その他"];
+
 let sourceFilter = "all";
 let selectedRatings = new Set(); // 空 = 全評価
 let selectedVersions = new Set(); // 空 = 全バージョン
+let selectedFeatures = new Set(); // 空 = 全機能
 let query = "";
 let shown = PAGE_SIZE;
 
@@ -188,6 +202,7 @@ function filtered() {
     if (sourceFilter !== "all" && d.source !== sourceFilter) return false;
     if (selectedRatings.size && !selectedRatings.has(d.rating)) return false;
     if (selectedVersions.size && !selectedVersions.has(verKey(d))) return false;
+    if (selectedFeatures.size && !(d.features || ["その他"]).some(f => selectedFeatures.has(f))) return false;
     if (words.length) {
       const text = ((d.title || "") + " " + (d.body || "") + " " + (d.author || "")).toLowerCase();
       if (!words.every(w => text.includes(w))) return false;
@@ -231,6 +246,29 @@ function renderChips() {
       render();
     };
     rtWrap.appendChild(b);
+  }
+
+  const featCounts = {};
+  for (const d of items) for (const f of (d.features || ["その他"])) featCounts[f] = (featCounts[f] || 0) + 1;
+  const fWrap = document.getElementById("feature-chips");
+  fWrap.innerHTML = "";
+  const fAll = document.createElement("button");
+  fAll.className = "chip";
+  fAll.textContent = "全機能";
+  fAll.setAttribute("aria-pressed", String(selectedFeatures.size === 0));
+  fAll.onclick = () => { selectedFeatures.clear(); shown = PAGE_SIZE; render(); };
+  fWrap.appendChild(fAll);
+  for (const f of FEATURES) {
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.textContent = `${f} ${featCounts[f] || 0}`;
+    b.setAttribute("aria-pressed", String(selectedFeatures.has(f)));
+    b.onclick = () => {
+      selectedFeatures.has(f) ? selectedFeatures.delete(f) : selectedFeatures.add(f);
+      shown = PAGE_SIZE;
+      render();
+    };
+    fWrap.appendChild(b);
   }
 
   const verCounts = {};
@@ -290,6 +328,7 @@ function render() {
       d.rating ? `<span class="stars" aria-label="評価 ${d.rating}">${stars(d.rating)}</span>` : "",
       d.version ? `<span>v${esc(d.version)}</span>` : "",
       d.author ? `<span>${esc(d.author)}</span>` : "",
+      ...(d.features || []).map(f => `<span class="tag">${esc(f)}</span>`),
       `<a class="card-link" href="${esc(d.url)}" target="_blank" rel="noopener">開く</a>`,
     ].filter(Boolean).join("");
     const card = document.createElement("div");

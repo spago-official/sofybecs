@@ -35,7 +35,8 @@
 ## 3. コンポーネント
 
 - **フィルタチップ**: default=白地+罫線 / selected=accent-soft地+accent文字+accent罫線 / hover=border濃く / focus-visible=accentのoutline 2px。サイドバー内は縦積み・幅100%、モバイル1カラム時は横並びに戻す
-- **レビューカード**: surface地、罫線、影なし。ソースバッジ + 星 + メタ行 + 本文
+- **レビューカード**: surface地、罫線、影なし。ソースバッジ + 星 + メタ行 + 機能タグ + 本文
+- **機能タグ**: 白地 + border罫線 + text-sub文字の控えめなピル。フィルタチップ（accent系）とは視覚的に区別する
 - **検索ボックス**: 罫線input、focus-visibleでaccent罫線
 
 ## 7. Do's / Don'ts

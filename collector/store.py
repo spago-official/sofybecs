@@ -4,6 +4,7 @@ import json
 import os
 from datetime import datetime, timezone
 
+from .features import classify_texts
 from .models import Item
 
 DATA_FILE = os.environ.get("DATA_FILE", "data/items.json")
@@ -52,6 +53,12 @@ def merge(items: list[Item]) -> list[dict]:
                 "version": i.extra.get("version", ""),
             }
         )
+    # 機能タグが無いものだけ分類する（付与済みタグは保持）
+    untagged = [d for d in data if not d.get("features")]
+    if untagged:
+        tags = classify_texts([f"{d.get('title', '')} {d.get('body', '')}" for d in untagged])
+        for d, t in zip(untagged, tags):
+            d["features"] = t
     data.sort(key=_sort_key, reverse=True)
     os.makedirs(os.path.dirname(DATA_FILE) or ".", exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
