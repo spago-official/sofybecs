@@ -5,10 +5,11 @@ import os
 # --- 監視対象 ---
 APP_STORE_APP_ID = "6480158120"  # ソフィBe (iOS, 日本ストア)
 APP_STORE_COUNTRY = "jp"
-APP_STORE_RSS_PAGES = 2  # 1ページ50件。定期実行なら2ページで十分
+# 1ページ50件・RSSの上限は10ページ。定期実行は2で十分（バックフィル時は10を指定）
+APP_STORE_RSS_PAGES = int(os.environ.get("APP_STORE_RSS_PAGES", "2"))
 
 GOOGLE_PLAY_APP_ID = "jp.sofy.be"
-GOOGLE_PLAY_FETCH_COUNT = 100
+GOOGLE_PLAY_FETCH_COUNT = int(os.environ.get("GOOGLE_PLAY_FETCH_COUNT", "100"))
 
 # X API v2 recent search クエリ。完全一致フレーズ + RT除外
 X_SEARCH_QUERY = '"ソフィBe" -is:retweet'
