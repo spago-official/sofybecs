@@ -25,11 +25,27 @@
     line-height: 1.7;
     overflow-wrap: anywhere;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
-  h1 { font-size: 20px; margin: 0 0 4px; }
-  .summary { color: var(--color-text-sub); font-size: 13px; margin: 0 0 24px; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 20px; margin: 0 0 16px; }
 
-  .controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .layout { display: flex; gap: 32px; align-items: flex-start; }
+  .sidebar {
+    flex: 0 0 240px;
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .results { flex: 1 1 auto; min-width: 0; }
+  .summary { color: var(--color-text-sub); font-size: 13px; margin: 0 0 16px; font-variant-numeric: tabular-nums; }
+
+  .filter-group { display: flex; flex-direction: column; gap: 8px; }
+  .filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-sub);
+  }
   .search {
     width: 100%;
     padding: 8px 12px;
@@ -42,6 +58,15 @@
   }
   .search:focus-visible { outline: none; border-color: var(--color-accent); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sidebar .chips { flex-direction: column; align-items: flex-start; }
+  .sidebar .chip { width: 100%; text-align: left; }
+
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .sidebar { position: static; flex-basis: auto; width: 100%; }
+    .sidebar .chips { flex-direction: row; }
+    .sidebar .chip { width: auto; text-align: center; }
+  }
   .chip {
     padding: 4px 12px;
     font-size: 13px;
@@ -107,16 +132,31 @@
 <body>
 <div class="wrap">
   <h1>ソフィBe 口コミ一覧</h1>
-  <p class="summary" id="summary">読み込み中…</p>
 
-  <div class="controls">
-    <input class="search" id="search" type="search" placeholder="キーワードで絞り込み（例: 記録 消えた）" aria-label="キーワード検索">
-    <div class="chips" id="source-chips" role="group" aria-label="ソースで絞り込み"></div>
-    <div class="chips" id="rating-chips" role="group" aria-label="評価で絞り込み"></div>
-    <div class="chips" id="version-chips" role="group" aria-label="バージョンで絞り込み"></div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="filter-group">
+        <input class="search" id="search" type="search" placeholder="キーワードで絞り込み（例: 記録 消えた）" aria-label="キーワード検索">
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">ソース</span>
+        <div class="chips" id="source-chips" role="group" aria-label="ソースで絞り込み"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">評価</span>
+        <div class="chips" id="rating-chips" role="group" aria-label="評価で絞り込み"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">バージョン</span>
+        <div class="chips" id="version-chips" role="group" aria-label="バージョンで絞り込み"></div>
+      </div>
+    </aside>
+
+    <main class="results">
+      <p class="summary" id="summary">読み込み中…</p>
+      <div id="list"></div>
+    </main>
   </div>
-
-  <div id="list"></div>
 </div>
 
 <script>

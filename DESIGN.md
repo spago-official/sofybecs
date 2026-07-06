@@ -7,7 +7,8 @@
 - プロファイル: dashboard（閲覧専用・情報密度中）
 - ムード: ミニマル・クリーン。装飾より読みやすさ優先
 - コンテンツ言語: 日本語中心
-- 対象端末: モバイル / デスクトップ両対応（1カラム、max-width 720px）
+- 対象端末: モバイル / デスクトップ両対応
+- レイアウト: デスクトップは2カラム（左サイドバー=検索・フィルタ／右メイン=結果一覧、sticky sidebar、max-width 1080px）。768px以下は1カラムに縦積み
 - ダークモード: なし
 - ※ ユーザー指示は「みんなで見れるのが大事」（= おまかせ）。デフォルト構成で生成
 
@@ -33,7 +34,7 @@
 
 ## 3. コンポーネント
 
-- **フィルタチップ**: default=白地+罫線 / selected=accent-soft地+accent文字+accent罫線 / hover=border濃く / focus-visible=accentのoutline 2px
+- **フィルタチップ**: default=白地+罫線 / selected=accent-soft地+accent文字+accent罫線 / hover=border濃く / focus-visible=accentのoutline 2px。サイドバー内は縦積み・幅100%、モバイル1カラム時は横並びに戻す
 - **レビューカード**: surface地、罫線、影なし。ソースバッジ + 星 + メタ行 + 本文
 - **検索ボックス**: 罫線input、focus-visibleでaccent罫線
 
