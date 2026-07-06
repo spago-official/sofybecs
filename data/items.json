@@ -2264,5 +2264,27 @@
   "created_at": "2026-01-30T01:54:10-07:00",
   "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
   "version": "4.10"
+ },
+ {
+  "source": "app_store",
+  "id": "13690941009",
+  "title": "記録がされない",
+  "body": "一定期間保存されてないことがありましたが原因わかりました\n生理の期間に、調子などを選択して、生理の選択をするとそれまでの項目がリセットされる\nそれに気づかず保存するためその期間の情報がない\n改善してほしい",
+  "rating": 3,
+  "author": "kndwonn",
+  "created_at": "2026-01-29T16:08:36-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.10"
+ },
+ {
+  "source": "app_store",
+  "id": "13684523346",
+  "title": "AIの対応",
+  "body": "チャットにAIが搭載されているが、敬語を話すことができない。とても不快。敬語を話すように言っても、タメ口で話すねと言い、とても気分が悪い。",
+  "rating": 1,
+  "author": "ahiru-noko",
+  "created_at": "2026-01-28T01:04:33-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.10"
  }
 ]
