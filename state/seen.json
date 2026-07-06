@@ -1,0 +1,5 @@
+{
+ "app_store": {"seen_ids": []},
+ "google_play": {"seen_ids": []},
+ "x": {"seen_ids": [], "since_id": null}
+}
