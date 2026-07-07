@@ -2,7 +2,7 @@
 
 ユニ・チャームの生理管理アプリ「ソフィBe」の口コミを収集するツール。
 
-- **閲覧ページ**: https://harukaaatashi.github.io/sofybecs/ （検索・ソース/評価/バージョンフィルタ付き。GitHub Pagesで自動更新）
+- **閲覧ページ**: https://sofybe-reviews.vercel.app/ （検索・ソース/評価/バージョンフィルタ付き。データ更新コミットのたびにVercelが自動再デプロイ）
 - **一覧**: [REVIEWS.md](REVIEWS.md) に日付順で蓄積される（GitHub上でそのまま閲覧可。生データは `data/items.json`）
 - **通知（任意）**: `SLACK_WEBHOOK_URL` を設定すると、新着だけSlackチャンネルにも流れる
 
