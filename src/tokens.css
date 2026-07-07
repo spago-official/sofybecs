@@ -1,0 +1,33 @@
+/* ソフィBe Semantic Color（Figmaカラーガイド準拠）。
+   色はこのトークン経由のみ。hex直書き禁止（DESIGN.md §2）。 */
+:root {
+  /* Text */
+  --color-text-primary: #242828;      /* Text.Base.Primary = Neutral.Gray.950 */
+  --color-text-secondary: #606b69;    /* Text.Base.Secondary = Neutral.Gray.500 */
+  --color-text-placeholder: #828e8c;  /* Text.Base.Placeholder = Neutral.Gray.400 */
+  --color-text-inactive: #acb4b2;     /* Text.Base.Inactive = Neutral.Gray.300 */
+  --color-text-link: #486873;         /* 独自: SofyBeBlue.800（本文と区別しつつ同系色） */
+
+  /* Accent */
+  --color-accent-primary: #0c2a30;    /* Accent.Primary = SofyBeBlue.950 */
+  --color-accent-secondary: #c5d9e5;  /* Accent.Secondary = SofyBeBlue.300 */
+
+  /* Background / Surface */
+  --color-bg: #f7f9fa;                /* Background.Main = SofyBeBlue.50 */
+  --color-surface: #ffffff;           /* Surface.Base.Primary = Neutral.White */
+  --color-surface-secondary: #f5f6f6; /* Surface.Base.Secondary = Neutral.Gray.50 */
+  --color-surface-emphasis: #e6eef3;  /* Surface.Emphasis = SofyBeBlue.100 */
+
+  /* Border */
+  --color-border: #e5e8e7;            /* Border.Main = Neutral.Gray.100 */
+
+  /* Alert */
+  --color-alert: #dc3826;             /* Alert.CautionHigh = Red.600 */
+
+  /* Other（ドメイン固有） */
+  --color-star: #ffb22e;              /* 独自: Orange.400（星評価） */
+
+  /* Shadow */
+  --shadow-base: 0 2px 8px rgba(0, 0, 0, 0.12);   /* Shadow.Base = #000 / 12% */
+  --shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.12); /* Shadow.Base をパネル用に拡張 */
+}

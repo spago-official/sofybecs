@@ -1,0 +1,32 @@
+{
+  "name": "sofybecs",
+  "version": "1.0.0",
+  "description": "ユニ・チャームの生理管理アプリ「ソフィBe」の口コミを収集するツール。",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build_site.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harukaaatashi/sofybecs.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-intl": "^10.1.14",
+    "smarthr-ui": "^97.0.0",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.3.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3"
+  }
+}
