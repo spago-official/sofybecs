@@ -38,7 +38,8 @@
   .site-header .wrap { padding-top: 0; padding-bottom: 0; }
   h1 { font-size: 20px; margin: 0; }
 
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  /* 上余白はsticky要素（sidebar/summary）自身が持つ。ここに置くとsticky時に間隔が縮む */
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
 
   .layout { display: flex; gap: 32px; align-items: flex-start; }
   .sidebar {
@@ -139,6 +140,8 @@
   .chip-selected .chip-count { color: var(--color-accent); }
 
   @media (max-width: 980px) {
+    /* 1カラムではサイドバーがstickyでないため、上余白はwrapに戻す */
+    .wrap { padding-top: 24px; }
     .layout { flex-direction: column; }
     .sidebar {
       position: static;
