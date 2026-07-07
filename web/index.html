@@ -42,13 +42,16 @@
 
   .layout { display: flex; gap: 32px; align-items: flex-start; }
   .sidebar {
-    flex: 0 0 260px;
+    flex: 0 0 300px;
     position: sticky;
     top: 64px;
-    padding: 24px 4px 24px 0;
+    /* 内容は1画面に収める設計。収まらない環境向けの保険 */
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding: 24px 4px 16px 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
     align-self: flex-start;
   }
   .results { flex: 1 1 auto; min-width: 0; }
@@ -56,6 +59,10 @@
     position: sticky;
     top: 64px;
     z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
     background: var(--color-bg);
     color: var(--color-text-sub);
     font-size: 13px;
@@ -63,6 +70,8 @@
     padding: 16px 0 12px;
     font-variant-numeric: tabular-nums;
   }
+  .summary .chip { min-height: 28px; padding: 0 12px; }
+  .chip-remove { font-size: 14px; line-height: 1; }
 
   .filter-group { display: flex; flex-direction: column; gap: 8px; }
   .filter-label {
@@ -82,17 +91,45 @@
   }
   .search:focus-visible { outline: none; border-color: var(--color-accent); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .sidebar-clear {
+  .filter-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .filter-toggle {
+    display: none;
+    min-height: 44px;
+    padding: 10px 12px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: border-color .15s;
+  }
+  .filter-toggle:hover { border-color: var(--color-text-sub); }
+  .filter-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+  .filter-toggle-meta {
+    color: var(--color-text-sub);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  .chips-toggle, .summary-clear {
     align-self: flex-start;
-    padding: 0;
+    padding: 4px 0;
     border: 0;
     background: transparent;
     color: var(--color-accent);
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
+    font-variant-numeric: tabular-nums;
   }
-  .sidebar-clear:hover { text-decoration: underline; }
-  .sidebar-clear:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; border-radius: 4px; }
+  .chips-toggle:hover, .summary-clear:hover { text-decoration: underline; }
+  .chips-toggle:focus-visible, .summary-clear:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; border-radius: 4px; }
   .chip-count {
     color: var(--color-text-sub);
     font-size: 12px;
@@ -106,9 +143,16 @@
       position: static;
       flex-basis: auto;
       width: 100%;
+      max-height: none;
+      overflow-y: visible;
       padding: 0;
-      gap: 16px;
+      gap: 12px;
     }
+    /* フィルター群は「絞り込み」ボタンで開閉（検索は常時表示） */
+    .filter-toggle { display: flex; }
+    .filter-body:not(.open) { display: none; }
+    /* タッチ端末向けにタップ領域を広げる */
+    .chip { min-height: 40px; }
     .summary {
       position: static;
       padding-top: 0;
@@ -120,8 +164,8 @@
     .summary { top: 56px; }
   }
   .chip {
-    min-height: 36px;
-    padding: 6px 12px;
+    min-height: 32px;
+    padding: 4px 12px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -204,27 +248,35 @@
       <div class="filter-group">
         <input class="search" id="search" type="search" placeholder="キーワードで絞り込み（例: 記録 消えた）" aria-label="キーワード検索">
       </div>
-      <button class="sidebar-clear" id="clear-filters" type="button" hidden>絞り込みをクリア</button>
-      <div class="filter-group">
-        <span class="filter-label">ソース</span>
-        <div id="source-filter"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">評価</span>
-        <div id="rating-filter"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">機能</span>
-        <div id="feature-filter"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">バージョン</span>
-        <div id="version-filter"></div>
+      <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-body">
+        <span>絞り込み</span><span class="filter-toggle-meta" id="filter-toggle-meta">未適用</span>
+      </button>
+      <div class="filter-body" id="filter-body">
+        <div class="filter-group">
+          <span class="filter-label">ソース</span>
+          <div id="source-filter"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">評価</span>
+          <div id="rating-filter"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">機能</span>
+          <div id="feature-filter"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">バージョン</span>
+          <div id="version-filter"></div>
+        </div>
       </div>
     </aside>
 
     <main class="results">
-      <p class="summary" id="summary">読み込み中…</p>
+      <div class="summary">
+        <span id="summary">読み込み中…</span>
+        <span class="chips" id="active-filters"></span>
+        <button class="summary-clear" id="clear-filters" type="button" hidden>すべてクリア</button>
+      </div>
       <div id="list"></div>
     </main>
   </div>
@@ -243,6 +295,8 @@ let selectedVersions = new Set(); // 空 = 全バージョン
 let selectedFeatures = new Set(); // 空 = 全機能
 let query = "";
 let shown = PAGE_SIZE;
+let versionExpanded = false; // バージョン群の「すべて表示」状態
+const VERSION_LIMIT = 8; // 折りたたみ時に表示する最新バージョン数
 
 // "4.16"(iOS) と "4.16.0"(Android) を同じリリースに束ねる
 const verKey = d => {
@@ -276,13 +330,19 @@ function toggleSetValue(set, value) {
   else set.add(value);
 }
 
-function renderChipGroup({ mountId, options, selectedValues, onToggle }) {
+function renderChipGroup({ mountId, options, selectedValues, onToggle, collapse }) {
   const mount = document.getElementById(mountId);
   mount.innerHTML = "";
 
+  // 折りたたみ時は先頭 limit 件 + 選択中の値のみ表示（選択状態は常に見える）
+  const collapsible = collapse && options.length > collapse.limit;
+  const visible = collapsible && !collapse.expanded
+    ? options.filter((option, i) => i < collapse.limit || selectedValues.includes(option.value))
+    : options;
+
   const chips = document.createElement("div");
   chips.className = "chips";
-  for (const option of options) {
+  for (const option of visible) {
     const selected = selectedValues.includes(option.value);
     const chip = document.createElement("button");
     chip.type = "button";
@@ -299,6 +359,19 @@ function renderChipGroup({ mountId, options, selectedValues, onToggle }) {
     chips.appendChild(chip);
   }
   mount.appendChild(chips);
+
+  if (collapsible) {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "chips-toggle";
+    toggle.setAttribute("aria-expanded", String(collapse.expanded));
+    toggle.textContent = collapse.expanded ? "折りたたむ" : `すべて表示（${options.length}）`;
+    toggle.onclick = () => {
+      collapse.onToggle();
+      renderFilters();
+    };
+    mount.appendChild(toggle);
+  }
 }
 
 function hasActiveFilter() {
@@ -349,10 +422,52 @@ function renderFilters() {
     options: versions.map(v => ({ value: v, label: v === "不明" ? v : `v${v}`, count: verCounts[v] })),
     selectedValues: [...selectedVersions],
     onToggle: value => { toggleSetValue(selectedVersions, value); },
+    collapse: {
+      limit: VERSION_LIMIT,
+      expanded: versionExpanded,
+      onToggle: () => { versionExpanded = !versionExpanded; },
+    },
   });
 
-  const clearBtn = document.getElementById("clear-filters");
-  clearBtn.hidden = !hasActiveFilter();
+  renderActiveChips(versions);
+
+  const activeCount = (sourceFilter !== "all" ? 1 : 0)
+    + selectedRatings.size + selectedFeatures.size + selectedVersions.size;
+  document.getElementById("filter-toggle-meta").textContent =
+    activeCount ? `${activeCount}件適用中` : "未適用";
+  document.getElementById("clear-filters").hidden = !hasActiveFilter();
+}
+
+// 適用中フィルターを結果側サマリー行に削除可能チップで表示
+function renderActiveChips(versions) {
+  const mount = document.getElementById("active-filters");
+  mount.innerHTML = "";
+  const active = [];
+  if (sourceFilter !== "all") {
+    active.push({ label: SOURCE_LABEL[sourceFilter], remove: () => { sourceFilter = "all"; } });
+  }
+  for (const r of [5, 4, 3, 2, 1].filter(r => selectedRatings.has(r))) {
+    active.push({ label: `星${r}`, remove: () => { selectedRatings.delete(r); } });
+  }
+  for (const f of FEATURES.filter(f => selectedFeatures.has(f))) {
+    active.push({ label: f, remove: () => { selectedFeatures.delete(f); } });
+  }
+  for (const v of versions.filter(v => selectedVersions.has(v))) {
+    active.push({ label: v === "不明" ? v : `v${v}`, remove: () => { selectedVersions.delete(v); } });
+  }
+  for (const item of active) {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "chip chip-selected";
+    chip.setAttribute("aria-label", `${item.label} の絞り込みを解除`);
+    chip.innerHTML = `${esc(item.label)} <span class="chip-remove">×</span>`;
+    chip.onclick = () => {
+      item.remove();
+      shown = PAGE_SIZE;
+      render();
+    };
+    mount.appendChild(chip);
+  }
 }
 
 function render() {
@@ -416,6 +531,12 @@ document.getElementById("clear-filters").addEventListener("click", () => {
   selectedVersions.clear();
   shown = PAGE_SIZE;
   render();
+});
+
+document.getElementById("filter-toggle").addEventListener("click", function () {
+  const body = document.getElementById("filter-body");
+  const open = body.classList.toggle("open");
+  this.setAttribute("aria-expanded", String(open));
 });
 
 fetch("./items.json", { cache: "no-cache" })
