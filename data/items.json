@@ -1,6 +1,64 @@
 [
  {
   "source": "google_play",
+  "id": "7065c2db-c7eb-43eb-a252-1898dbab5198",
+  "title": "",
+  "body": "いいね 分かりやすいです!!",
+  "rating": 5,
+  "author": "佐熊隼華",
+  "created_at": "2026-07-14T13:05:24",
+  "url": "https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true",
+  "version": "4.17.0",
+  "features": [
+   "その他"
+  ]
+ },
+ {
+  "source": "google_play",
+  "id": "565f005f-e74e-4e28-97c8-6aaeb5e769f0",
+  "title": "",
+  "body": "自分の周期がわからないので前もってお知らせしてくれるので助かってます。機種変しても引き継ぎできてよかったです!",
+  "rating": 4,
+  "author": "risa",
+  "created_at": "2026-07-14T04:37:19",
+  "url": "https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true",
+  "version": "4.17.0",
+  "features": [
+   "カレンダー",
+   "設定"
+  ]
+ },
+ {
+  "source": "google_play",
+  "id": "5902723b-a20b-4dc1-ad14-e5cae2c2d8e2",
+  "title": "",
+  "body": "月経の日がわかりやすいです",
+  "rating": 5,
+  "author": "長家志津代",
+  "created_at": "2026-07-14T00:22:13",
+  "url": "https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true",
+  "version": "4.17.0",
+  "features": [
+   "その他"
+  ]
+ },
+ {
+  "source": "app_store",
+  "id": "14299978408",
+  "title": "生理が乱れると管理してくれない",
+  "body": "楽しく使っていたけど、生理周期が不規則で２ヶ月来ないときがあり、そうするとグラフが永遠に底を這う状態になってしまいます。１ヶ月に一回ちゃんと生理が来る人しか使えないのでしょうか。それともバグなだけでしょうか。40後半なので必ずしも定期的に生理こないため、仕様なら改善してほしいです。",
+  "rating": 3,
+  "author": "taku1986",
+  "created_at": "2026-07-13T16:46:45-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.17",
+  "features": [
+   "カレンダー",
+   "レポート"
+  ]
+ },
+ {
+  "source": "google_play",
   "id": "a9adf30d-8dfa-4815-bab7-ef567cc2df02",
   "title": "",
   "body": "アップデートしないとすぐに使用できないのは困る。毎月アップデートしてませんか？そこまでの機能ありますか。ますます日々のチェックをやりたく無くなる。 生理予定日Todayは7/17、生理予定日は14-20日。どういうことでしょう。移行してから使いずらくなった。",

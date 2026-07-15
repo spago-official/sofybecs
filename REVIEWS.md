@@ -1,10 +1,24 @@
 # ソフィBe 口コミ一覧
 
-全 1219 件（App Store 514件 / Google Play 705件）・最新の口コミ日: 2026-07-13
+全 1223 件（App Store 515件 / Google Play 708件）・最新の口コミ日: 2026-07-14
 
 ※ 表示は直近 300 件まで。全件は [`data/items.json`](data/items.json) にあります。
 
+## 2026-07-14
+
+- **Google Play** ★★★★★ v4.17.0 佐熊隼華 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > いいね 分かりやすいです!!
+
+- **Google Play** ★★★★☆ v4.17.0 risa [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > 自分の周期がわからないので前もってお知らせしてくれるので助かってます。機種変しても引き継ぎできてよかったです!
+
+- **Google Play** ★★★★★ v4.17.0 長家志津代 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > 月経の日がわかりやすいです
+
 ## 2026-07-13
+
+- **App Store** ★★★☆☆ v4.17 taku1986 — 生理が乱れると管理してくれない [↗](https://apps.apple.com/jp/app/id6480158120?see-all=reviews)
+  > 楽しく使っていたけど、生理周期が不規則で２ヶ月来ないときがあり、そうするとグラフが永遠に底を這う状態になってしまいます。１ヶ月に一回ちゃんと生理が来る人しか使えないのでしょうか。それともバグなだけでしょうか。40後半なので必ずしも定期的に生理こないため、仕様なら改善してほしいです。
 
 - **Google Play** ★☆☆☆☆ v4.17.0 s灰音 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
   > アップデートしないとすぐに使用できないのは困る。毎月アップデートしてませんか？そこまでの機能ありますか。ますます日々のチェックをやりたく無くなる。 生理予定日Todayは7/17、生理予定日は14-20日。どういうことでしょう。移行してから使いずらくなった。
@@ -1451,20 +1465,4 @@
 
 - **Google Play** ★★★☆☆ v4.8.2 Akane Ino [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
   > 体調のスタンプが色々あって おりものの色とかもあって良い。 その日の体調とトップ画面ですぐ見えるのも 昨日と比較できて見やすい。 コメントで書いた部分も体調の部分で見えるといいな。何文字以内とかでいいから。 立ち上がりが極端に遅いことがある… 私の携帯が悪いのかな…
-
-## 2026-01-09
-
-- **Google Play** ★★★★★ v4.8.2 笹木愛梨 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 前使ってた、違う生理管理アプリよりは 使いやすいですね。 全て無料で使わせて頂けるのは 本当に有り難いです🙏 これからも、愛用したいと思います😊
-
-- **Google Play** ★★★☆☆ v4.8.2 kaka [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 機種変更したので新しい端末でログインしようとしましたが、ログインが出来ない。また、パスワードを忘れた方へからメアドを打ち込み送っても来ないので、ログイン出来ない。古い端末にまだ残っているためかと思ったのでアンインして再度ログイン試したものの出来ない。問い合わせも出来ないので困っています。使い続けたいのですが、新しくアカウントを作り直ししたほうがいいのか、他アプリにしようか…。
-
-## 2026-01-08
-
-- **App Store** ★★★☆☆ v4.8.2 らるらる1978 — ヘルスケアと連動して、体重計、体温計の自動入力が出来たらすごく便利! [↗](https://apps.apple.com/jp/app/id6480158120?see-all=reviews)
-  > いちいち入力するのも手間なので、機種問わず連携ができたら、嬉しいし、使い勝手が良くなると思う!
-
-- **Google Play** ★★★★★ v4.8.2 Y.817 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 他のアプリもダウンロードして入れてみたことがありましたが、一番こちらが簡単で使いやすいです。 おすすめです😙
 
