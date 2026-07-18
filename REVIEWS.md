@@ -1,8 +1,18 @@
 # ソフィBe 口コミ一覧
 
-全 1225 件（App Store 516件 / Google Play 709件）・最新の口コミ日: 2026-07-15
+全 1227 件（App Store 516件 / Google Play 711件）・最新の口コミ日: 2026-07-17
 
 ※ 表示は直近 300 件まで。全件は [`data/items.json`](data/items.json) にあります。
+
+## 2026-07-17
+
+- **Google Play** ★★★★☆ v4.17.0 星野葵 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > 割と生理日が正確に当たることが多い
+
+## 2026-07-16
+
+- **Google Play** ★★☆☆☆ v4.16.0 コウ [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > オフラインで使えないとは思えなかったのでかなり使い勝手が悪いです
 
 ## 2026-07-15
 
@@ -1460,12 +1470,4 @@
 
 - **Google Play** ★★★★★ v4.8.2 Momoko [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
   > 色々な生理管理アプリを挫折してきたのですが、初めて続けられました！ホルモンバランスと体調（メンタル）の変動を把握したかったので、ニーズにピッタリのアプリでした。 Fitとの連携で睡眠時間と体重も連動して記録してくれるのと、レポート機能でそれらの記録をホルモンバランスと合わせて確認できるのがとても便利です。これからも使わせていただきます。
-
-## 2026-01-11
-
-- **Google Play** ★☆☆☆☆ v4.8.2 佐伯吉美 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 生理管理のために、以前のソフィからサポート期間切れるため、仕方なく移行。 以前のソフィはタイプ診断をして、オススメ行動リストがあって、気をつける事が分かりやすかった。 こちらはチャット機能に変化したが、使い勝手が悪く、的外れな返答ばかり返ってくるし、的外れな質問ばかり勝手に入ってきてウザい。 チャットの通知をoffにしたら、毎日の記録の通知も来なくなった。 使い勝手がかなり悪くなったから、前に戻してほしい。 もう最悪。 他のアプリに移行するのも面倒だし、無料だから使っているが、有料だったら絶対に使いたくない位使い勝手悪くて最悪。 入力しているとイライラしてくるから、数日に1回まとめて入力にしているが、勝手に出て来るチャットがウザい。チャット機能をoffに出来るようにしてほしい。 もう最悪。
-
-- **Google Play** ★★★★★ Camila Sato [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 整理の相談？とか聞いてくれてありがたい
 
