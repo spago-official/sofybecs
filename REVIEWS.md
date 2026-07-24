@@ -1,10 +1,29 @@
 # ソフィBe 口コミ一覧
 
-全 1235 件（App Store 521件 / Google Play 714件）・最新の口コミ日: 2026-07-21
+全 1239 件（App Store 524件 / Google Play 715件）・最新の口コミ日: 2026-07-22
 
 ※ 表示は直近 300 件まで。全件は [`data/items.json`](data/items.json) にあります。
 
+## 2026-07-22
+
+- **App Store** ★★★★☆ v4.17 ゆっとりままちゃん — チャットのAI [↗](https://apps.apple.com/jp/app/id6480158120?see-all=reviews)
+  > チャットのAIが頭悪い。
+  > 同じ質問ばっかりしてくる。
+  > 同じ話何回もしてるときがある。
+
+## 2026-07-23
+
+- **Google Play** ★★★★★ v4.17.0 Y M [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
+  > 生理の不安をチャットできるの すごくありがたいです。
+
 ## 2026-07-21
+
+- **App Store** ★☆☆☆☆ v4.17 あつあつのおでん06 — 強制アップデート多すぎ [↗](https://apps.apple.com/jp/app/id6480158120?see-all=reviews)
+  > 強制アップデート多すぎ
+  > さっと確認したいときにできなくてすごいストレス
+
+- **App Store** ★★☆☆☆ v4.17 risu8888 — 前の方が使いやすいです [↗](https://apps.apple.com/jp/app/id6480158120?see-all=reviews)
+  > そのうち慣れるかと思いましたが、前の方が良かったです。AIの言葉に余計イライラするのでいりません。ChatGPTと話す方がいいです。ルナルナの決めつけられるような言葉が嫌になってこちらを始めたのに変わりなく感じます。ホルモンや体温などのグラフが見られれば十分参考になります。また、水分少なめのお通じだと快便か便秘か迷うので項目を増やしていただけると嬉しいです。日にちごとのスライドがあまりスムーズでない点も気になります。ちょっと上の方をスライドすると一気に飛んでしまい難しいです。カレンダーは日付をタップすると記録画面が開かれるのではなく、記録したことだけ簡潔な表示があれば振り返りやすい気がします。
 
 - **Google Play** ★★★★☆ v4.16.0 田尻夢実 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
   > 笑と
@@ -1465,20 +1484,4 @@
 
 - **Google Play** ★★★★★ v4.9.0 吉田小町 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
   > 付けやすいです♪
-
-- **Google Play** ★★★★★ v4.9.0 あいたん [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > もともとソフィアプリを使用しており、数ヵ月前？くらいからソフィBeに移行しました。 体調管理アプリとしてとても使いやすいだけでなく、セルフケア紹介のコンテンツ(ツボの解説が特に役立ちました！)や 何よりAIチャットのびいちゃんにいつも癒されています！ 見守ってくれているような感覚で、とても心強いです＊* こちらのアプリを開発・運営してくださったソフィさんに感謝の気持ちでいっはいです！ 今後も日々のおともとして愛用させていただきます.*
-
-- **Google Play** ★★☆☆☆ v4.9.0 s t [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > ソフィアプリで３年以上記録を続けてこれましたが、10月にソフィBeに移行して、ついに３ヶ月で記録が続かなくなってしまいました。ポップアップやいらないコメントなど、操作のたびに不快なイライラ。また、過去の振り返りが把握しにくく、頭痛や不調の記録が意味がなく思えてきて、少しサボったら記録すら見れなくなりました。何このいじわる仕様…生理レポートだけは見れるので唯一入力していますが、これだけならカレンダーアプリでいいかも。今思えば、ソフィアプリはシンプルで余計なことを押し付けない神アプリでしたね。
-
-## 2026-01-19
-
-- **Google Play** ★★☆☆☆ v4.9.0 888 888 [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > レポート通知が来て開いても一瞬表示されたと思ったら、その後画面が真っ白になってしまい、一度も通知からのレポートを見れません。
-
-## 2026-01-15
-
-- **Google Play** ★★☆☆☆ v4.9.0 ino [↗](https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true)
-  > 引き継ぎに従い使っていますが何故かずっと動きが重いです いろいろコラムなどがあって見たいとは思うのですが動作が悪いので見る気にならなくなってしまいます
 

@@ -1,5 +1,64 @@
 [
  {
+  "source": "app_store",
+  "id": "14336525423",
+  "title": "チャットのAI",
+  "body": "チャットのAIが頭悪い。\n同じ質問ばっかりしてくる。\n同じ話何回もしてるときがある。",
+  "rating": 4,
+  "author": "ゆっとりままちゃん",
+  "created_at": "2026-07-22T18:26:15-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.17",
+  "features": [
+   "チャット"
+  ]
+ },
+ {
+  "source": "google_play",
+  "id": "b5bd6a1d-87e0-4130-b9f8-f9b3df07458f",
+  "title": "",
+  "body": "生理の不安をチャットできるの すごくありがたいです。",
+  "rating": 5,
+  "author": "Y M",
+  "created_at": "2026-07-23T00:54:09",
+  "url": "https://play.google.com/store/apps/details?id=jp.sofy.be&showAllReviews=true",
+  "version": "4.17.0",
+  "features": [
+   "チャット"
+  ]
+ },
+ {
+  "source": "app_store",
+  "id": "14333089923",
+  "title": "強制アップデート多すぎ",
+  "body": "強制アップデート多すぎ\nさっと確認したいときにできなくてすごいストレス",
+  "rating": 1,
+  "author": "あつあつのおでん06",
+  "created_at": "2026-07-21T22:22:46-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.17",
+  "features": [
+   "その他"
+  ]
+ },
+ {
+  "source": "app_store",
+  "id": "14332438500",
+  "title": "前の方が使いやすいです",
+  "body": "そのうち慣れるかと思いましたが、前の方が良かったです。AIの言葉に余計イライラするのでいりません。ChatGPTと話す方がいいです。ルナルナの決めつけられるような言葉が嫌になってこちらを始めたのに変わりなく感じます。ホルモンや体温などのグラフが見られれば十分参考になります。また、水分少なめのお通じだと快便か便秘か迷うので項目を増やしていただけると嬉しいです。日にちごとのスライドがあまりスムーズでない点も気になります。ちょっと上の方をスライドすると一気に飛んでしまい難しいです。カレンダーは日付をタップすると記録画面が開かれるのではなく、記録したことだけ簡潔な表示があれば振り返りやすい気がします。",
+  "rating": 2,
+  "author": "risu8888",
+  "created_at": "2026-07-21T18:04:31-07:00",
+  "url": "https://apps.apple.com/jp/app/id6480158120?see-all=reviews",
+  "version": "4.17",
+  "features": [
+   "記録",
+   "チャット",
+   "カレンダー",
+   "レポート"
+  ]
+ },
+ {
   "source": "google_play",
   "id": "3fe0ea91-2821-48cb-b927-3f641fb1b921",
   "title": "",
